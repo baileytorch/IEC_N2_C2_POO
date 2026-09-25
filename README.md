@@ -8,7 +8,26 @@ El desarrollo modular es una técnica de diseño de software que consiste en div
 
 ## Beneficios clave
 
-    - Facilidad de mantenimiento: Si hay un error, sabes exactamente en qué módulo buscar y puedes arreglarlo sin romper el resto del sistema.
-    - Reutilización de código: Un mismo módulo (por ejemplo, el sistema de autenticación de usuarios o la conexión a la base de datos) puede usarse en diferentes partes del proyecto o en proyectos futuros.
-    - Trabajo en equipo: Permite que varios programadores trabajen simultáneamente en diferentes partes del código sin pisarse el trabajo de los demás.
-    - Escalabilidad: Añadir nuevas funciones es tan fácil como crear un módulo nuevo e integrarlo en el flujo existente.
+- Facilidad de mantenimiento: Si hay un error, sabes exactamente en qué módulo buscar y puedes arreglarlo sin romper el resto del sistema.
+- Reutilización de código: Un mismo módulo (por ejemplo, el sistema de autenticación de usuarios o la conexión a la base de datos) puede usarse en diferentes partes del proyecto o en proyectos futuros.
+- Trabajo en equipo: Permite que varios programadores trabajen simultáneamente en diferentes partes del código sin pisarse el trabajo de los demás.
+- Escalabilidad: Añadir nuevas funciones es tan fácil como crear un módulo nuevo e integrarlo en el flujo existente.
+
+## Control DataBase
+- Para controlar la base de datos necesitamos tener un usuario específico, con permisos explícitos para trabajar sobre una base de datos definida. Esto lo lograremos ejecutando las siguientes sentencias SQL:
+```
+CREATE USER 'nombre_usuario'@'nombre_servidor' IDENTIFIED BY 'contraseña_usuario';
+```
+
+- Le asignamos los permisos a nuestra base de datos completa ejecutando la siguiente sentencia SQL:
+```
+GRANT ALL PRIVILEGES ON mi_base_datos.* TO 'nombre_usuario'@'nombre_servidor';
+```
+
+- Finalmente debemos grabar esos privilegios con la siguiente sentencia SQL:
+```
+FLUSH PRIVILEGES;
+```
+
+Para conectarnos a la base de datos desde nuestra aplicación usaremos el ORM *Pewee* y el driver de base de datos *Pymysql*.
+- *ORM*: Un ORM (Object-Relational Mapping o mapeo objeto-relacional) es una técnica de programación que permite conectar una base de datos relacional con el código de una aplicación *POO*, traduciendo las tablas en clases y los registros en objetos.

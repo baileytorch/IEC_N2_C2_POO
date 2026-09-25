@@ -31,3 +31,15 @@ FLUSH PRIVILEGES;
 
 Para conectarnos a la base de datos desde nuestra aplicación usaremos el ORM *Pewee* y el driver de base de datos *Pymysql*.
 - *ORM*: Un ORM (Object-Relational Mapping o mapeo objeto-relacional) es una técnica de programación que permite conectar una base de datos relacional con el código de una aplicación *POO*, traduciendo las tablas en clases y los registros en objetos.
+
+## Control de dependencias
+Para tener un mejor control de las dependencias de nuestros proyectos, es conveniente crear un archivo *requirements.txt* que contendrá la lista de dependencias con sus números de versión, lo que permitirá además hacer una isntalación rápida de todas las librerías que contiene.
+Si ya tenemos un archivo *requirements.txt* en el directorio principal de nuestro proyecto, ejecutaremos la instalación mediante el siguiente comando por terminal:
+```
+pip install -r requirements.txt
+```
+
+Si no tenemos un archivo, pero ya hemos instalado las librerías, podemos crearlo con el siguiente comando por terminal:
+```
+pip freeze > requirements.txt
+```

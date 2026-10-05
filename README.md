@@ -16,7 +16,7 @@ El desarrollo modular es una técnica de diseño de software que consiste en div
 ## Control DataBase
 - Para controlar la base de datos necesitamos tener un usuario específico, con permisos explícitos para trabajar sobre una base de datos definida. Esto lo lograremos ejecutando las siguientes sentencias SQL:
 ```
-CREATE USER 'nombre_usuario'@'nombre_servidor' IDENTIFIED BY 'contraseña_usuario';
+CREATE USER 'nombre_usuario'@'nombre_servidor' IDENTIFIED WITH caching_sha2_password BY 'contraseña_usuario';
 ```
 
 - Le asignamos los permisos a nuestra base de datos completa ejecutando la siguiente sentencia SQL:

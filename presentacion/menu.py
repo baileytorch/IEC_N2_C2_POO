@@ -1,5 +1,6 @@
 import sys
 from datos import nombre_app,version_app,main_menu
+from presentacion.presentacion_comunas import mostrar_comunas
 
 def menu_principal():
     print(f'{nombre_app} {version_app}')
@@ -12,7 +13,7 @@ def menu_principal():
         opcion_usuario = input('Ingrese una opción [1-4]: ')
 
         if opcion_usuario == '1':
-            print('Seleccionada opcion 1')
+            mostrar_comunas()
         elif opcion_usuario == '2':
             print('Seleccionada opcion 2')
         elif opcion_usuario == '3':

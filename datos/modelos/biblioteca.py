@@ -1,6 +1,6 @@
 from datos.conexion import base_datos
 from datos.modelos.direccion import Direccion
-from peewee import Model, AutoField, CharField, IntegerField, ForeignKeyField
+from peewee import Model, AutoField, CharField, ForeignKeyField
 
 database = base_datos()
 

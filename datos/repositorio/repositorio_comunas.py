@@ -5,7 +5,7 @@ from datos.auxiliar import mensaje_error_orm
 database = base_datos()
 
 def listado_comunas():
-    comunas = Comuna.select()
+    comunas = Comuna.select().where(Comuna.habilitado == True)
     return comunas
 
 def guardar_comuna(comuna: Comuna):
@@ -17,7 +17,7 @@ def guardar_comuna(comuna: Comuna):
 
 def comuna_por_nombre(nombre):
     try:
-        comunas = Comuna.select().where(Comuna.comuna.contains(nombre))
+        comunas = Comuna.select().where(Comuna.nombre_comuna.contains(nombre), Comuna.habilitado == True)
         if comunas:
             return comunas
     except Exception as error:

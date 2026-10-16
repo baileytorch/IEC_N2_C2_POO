@@ -8,7 +8,7 @@ def cargar_comunas(tabla: PrettyTable):
 
     if comunas:
         for comuna in comunas:
-            tabla.add_row([comuna.id_comuna, comuna.codigo_comuna, comuna.comuna])
+            tabla.add_row([comuna.id_comuna, comuna.codigo_comuna, comuna.nombre_comuna])
 
     return tabla
 
@@ -18,14 +18,14 @@ def buscar_comunas(tabla: PrettyTable,nombre):
 
     if comunas:
         for comuna in comunas:
-            tabla.add_row([comuna.id_comuna, comuna.codigo_comuna, comuna.comuna])
+            tabla.add_row([comuna.id_comuna, comuna.codigo_comuna, comuna.nombre_comuna])
 
     return tabla
 
 def crear_comuna(codigo,nombre):
     nueva_comuna = Comuna()
     nueva_comuna.codigo_comuna = codigo
-    nueva_comuna.comuna = nombre
+    nueva_comuna.nombre_comuna = nombre
     comuna = guardar_comuna(nueva_comuna)
     if comuna == 1:
-        print(f'Se ha guardado la comuna {nueva_comuna.comuna} con ID: {nueva_comuna.id_comuna}')
+        print(f'Se ha guardado la comuna {nueva_comuna.nombre_comuna} con ID: {nueva_comuna.id_comuna}')

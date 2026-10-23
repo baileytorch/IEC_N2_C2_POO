@@ -4,8 +4,16 @@ from datos.auxiliar import mensaje_error_orm
 
 database = base_datos()
 
-def listado_comunas():
+def listado_comunas_habilitadas():
     comunas = Comuna.select().where(Comuna.habilitado == True)
+    return comunas
+
+def listado_comunas_deshabilitadas():
+    comunas = Comuna.select().where(Comuna.habilitado == False)
+    return comunas
+
+def listado_comunas():
+    comunas = Comuna.select()
     return comunas
 
 def guardar_comuna(comuna: Comuna):

@@ -1,9 +1,9 @@
-from datos.repositorio.repositorio_comunas import listado_comunas,guardar_comuna,comuna_por_nombre
+from datos.repositorio.repositorio_comunas import listado_comunas_habilitadas,guardar_comuna,comuna_por_nombre
 from prettytable import PrettyTable
 from datos.modelos.comuna import Comuna
 
 def cargar_comunas(tabla: PrettyTable):
-    comunas = listado_comunas()
+    comunas = listado_comunas_habilitadas()
     tabla.field_names = ['Id','Código','Comuna']
 
     if comunas:

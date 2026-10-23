@@ -3,6 +3,8 @@ from datos.repositorio.repositorio_comunas import comuna_por_id,guardar_comuna
 from datos.modelos.comuna import Comuna
 from prettytable import PrettyTable
 
+input_nombre_comuna = 'Ingrese Nombre de Comuna: '
+
 def mostrar_comunas():
     tabla_comunas = PrettyTable()
     tabla_comunas = cargar_comunas(tabla_comunas)
@@ -10,7 +12,7 @@ def mostrar_comunas():
 
 def datos_comuna():
     codigo = input('Ingrese Código de Comuna: ')
-    nombre = input('Ingrese Nombre de Comuna: ')
+    nombre = input(input_nombre_comuna)
     crear_comuna(codigo,nombre.title())
 
 def buscar_comuna_nombre(nombre):
@@ -19,7 +21,7 @@ def buscar_comuna_nombre(nombre):
     print(tabla_comunas)
 
 def actualizar_comuna():
-    nombre = input('Ingrese Nombre de Comuna: ')
+    nombre = input(input_nombre_comuna)
     buscar_comuna_nombre(nombre)
     id_ingresado = input('Ingrese Id de Comuna para modificar: ')
     comuna = comuna_por_id(id_ingresado)
@@ -35,7 +37,7 @@ def actualizar_comuna():
         print(f'Comuna {comuna.nombre_comuna} actualizada con éxito')
 
 def eliminar_comuna():
-    nombre = input('Ingrese Nombre de Comuna: ')
+    nombre = input(input_nombre_comuna)
     buscar_comuna_nombre(nombre)
     id_ingresado = input('Ingrese Id de Comuna para eliminar: ')
     comuna = comuna_por_id(id_ingresado)

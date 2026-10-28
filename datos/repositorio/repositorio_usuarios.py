@@ -23,7 +23,7 @@ def guardar_usuario(usuario: Usuario):
     except Exception as error:
         print(f'{mensaje_error_orm} {error}')
 
-def usuario_por_nombre(rut):
+def usuario_por_rut(rut):
     try:
         usuarios = Usuario.select().where(Usuario.rut == rut)
         if usuarios:

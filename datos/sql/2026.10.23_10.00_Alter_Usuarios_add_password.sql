@@ -1,3 +1,4 @@
 ALTER TABLE usuarios ADD COLUMN password VARCHAR(60) NULL;
 ALTER TABLE usuarios MODIFY rut VARCHAR(12) NULL;
 ALTER TABLE usuarios ADD UNIQUE(rut);
+ALTER TABLE usuarios ADD UNIQUE(correo);

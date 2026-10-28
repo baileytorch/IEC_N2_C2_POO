@@ -1,6 +1,7 @@
 import sys
 from datos import nombre_app,version_app,main_menu
 from presentacion.presentacion_comunas import mostrar_comunas,datos_comuna,eliminar_comuna
+from presentacion.presentacion_usuarios import datos_usuario
 
 def menu_principal():
     print(f'{nombre_app} {version_app}')
@@ -12,14 +13,15 @@ def menu_principal():
 
         opcion_usuario = input('Ingrese una opción [1-4]: ')
 
-        if opcion_usuario == '1':
-            mostrar_comunas()
-        elif opcion_usuario == '2':
-            datos_comuna()
-        elif opcion_usuario == '3':
-            eliminar_comuna()
-        elif opcion_usuario == '4':
-            print('Saliendo de Sistema')
-            sys.exit()
-        else:
-            print('Opción Ingresada NO corresponde...\nIngrese nuevamente.')
+        match opcion_usuario:
+            case '1':
+                mostrar_comunas()
+            case '2':
+                datos_usuario()
+            case '3':
+                eliminar_comuna()
+            case '4':
+                print('Saliendo de Sistema')
+                sys.exit()
+            case _:
+                print('Opción Ingresada NO corresponde...\nIngrese nuevamente.')

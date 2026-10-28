@@ -1,5 +1,5 @@
 from datos.conexion import base_datos
-from peewee import Model, AutoField, CharField
+from peewee import Model, AutoField, CharField, BooleanField
 
 database = base_datos()
 

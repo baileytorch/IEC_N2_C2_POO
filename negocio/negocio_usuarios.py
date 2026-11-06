@@ -38,7 +38,11 @@ def crear_usuario(str_rut, str_nombre, str_apellido, str_correo, id_pais, str_fe
     nuevo_usuario.apellido = str_apellido
     nuevo_usuario.correo = str_correo
     nuevo_usuario.pais = id_pais
-    nuevo_usuario.fecha_nacimiento = datetime.strptime(str_fecha_nacimiento, "%d/%m/%Y")
+    
+    if str_fecha_nacimiento == '':
+        nuevo_usuario.fecha_nacimiento = None
+    else:        
+        nuevo_usuario.fecha_nacimiento = datetime.strptime(str_fecha_nacimiento, "%d/%m/%Y")
     
     match genero:
         case '1':

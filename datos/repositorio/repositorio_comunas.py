@@ -1,6 +1,6 @@
 from datos.conexion import base_datos
 from datos.modelos.comuna import Comuna
-from datos.auxiliar import mensaje_error_orm
+from auxiliares.auxiliar import mensaje_error_orm
 
 database = base_datos()
 

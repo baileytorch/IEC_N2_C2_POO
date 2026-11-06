@@ -17,9 +17,3 @@ def obtener_pais_nombre(nombre):
 
 def guardar_pais():
     print('GG')
-
-def actualizar_pais():
-    print('GG')
-
-def eliminar_pais():
-    print('GG')
